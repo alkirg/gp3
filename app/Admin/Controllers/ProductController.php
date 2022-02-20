@@ -78,8 +78,8 @@ class ProductController extends AdminController
 //        $form->number('category', __('Category'));
         $form->select('category_id')->options(Category::all()->pluck('name','id'));
         $form->number('price', __('Price'));
-        $form->image('preview_picture', __('Preview picture'));//->uniqueName();
-        $form->image('detail_picture', __('Detail picture'));//->uniqueName();
+        $form->image('preview_picture', __('Preview picture'))->uniqueName();
+        $form->image('detail_picture', __('Detail picture'))->uniqueName();
         $form->textarea('preview_text', __('Preview text'));
         $form->textarea('detail_text', __('Detail text'));
 

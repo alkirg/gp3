@@ -1120,3 +1120,8 @@ a img.aligncenter {
   width: 130%;
   background-color: #d0e26c;
   z-index: -5; }
+
+
+.form__field {
+    margin-bottom: 20px;
+}

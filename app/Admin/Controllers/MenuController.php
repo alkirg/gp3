@@ -61,7 +61,8 @@ class MenuController extends AdminController
     {
         $form = new Form(new Menu());
 
-        $form->number('parent_id', __('Parent id'));
+//        $form->number('parent_id', __('Parent id'));
+        $form->select('parent_id', __('Parent id'))->options(Menu::all()->pluck('title','id'));
         $form->text('title', __('Title'));
         $form->url('link', __('Link'));
 

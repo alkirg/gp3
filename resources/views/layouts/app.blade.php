@@ -13,11 +13,7 @@
     <div class="middle">
         @include('layouts.sidebar')
         <div class="main-content">
-            @include('layouts.content-top')
-            <div class="content-middle">
-                @include('layouts.content-middle')
-                @include('layouts.content-footer')
-            </div>
+            {{$content}}
             <div class="content-bottom"></div>
         </div>
     </div>

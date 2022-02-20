@@ -1,5 +1,5 @@
 <header class="main-header">
-    <div class="logotype-container"><a href="#" class="logotype-link"><img src="img/logo.png" alt="Логотип"></a></div>
+    <div class="logotype-container"><a href="/" class="logotype-link"><img src="{{asset('img/logo.png')}}" alt="Логотип"></a></div>
     <nav class="main-navigation">
         <ul class="nav-list">
             @foreach($menu->roots() as $item)
@@ -17,6 +17,6 @@
                 <div class="payment-basket__status__basket"><span class="payment-basket__status__basket-value">0</span><span class="payment-basket__status__basket-value-descr">товаров</span></div>
             </div>
         </div>
-        <div class="authorization-block"><a href="{{route('register')}}" class="authorization-block__link">Регистрация</a><a href="{{route('login')}}" class="authorization-block__link">Войти</a></div>
+        <div class="authorization-block">@guest<a href="{{route('register')}}" class="authorization-block__link">Регистрация</a><a href="{{route('login')}}" class="authorization-block__link">Войти</a>@endguest @auth<span class="authorization-block__link">Здравствуйте!</span><a href="{{route('logout')}}" class="authorization-block__link">Выйти</a>@endauth</div>
     </div>
 </header>

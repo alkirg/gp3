@@ -13,4 +13,9 @@ class Category extends Model
     {
         return $this->hasMany(Product::class, 'category_id');
     }
+
+    public function url(): string
+    {
+        return '/' . config('catalog.folder') . '/' . $this->id;
+    }
 }

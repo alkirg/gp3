@@ -18,12 +18,14 @@ class GenerateMenus
      */
     public function handle(Request $request, Closure $next)
     {
-        (new LavaryMenu())->make('menu', function ($menu) {
-            $items = Menu::all();
-            foreach ($items as $item) {
-                $menu->add($item->title, $item->link);
-            }
-        });
+        if ($request->segment(1) != 'admin') {
+            (new LavaryMenu())->make('menu', function ($menu) {
+                $items = Menu::all();
+                foreach ($items as $item) {
+                    $menu->add($item->title, $item->link);
+                }
+            });
+        }
         return $next($request);
     }
 }

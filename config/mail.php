@@ -95,6 +95,8 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'to' => 'kav@gde.ru',
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

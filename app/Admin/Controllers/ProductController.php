@@ -53,10 +53,10 @@ class ProductController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
-        $show->field('category_id', __('Category'));
+        $show->field('category.name', __('Category'));
         $show->field('price', __('Price'));
-        $show->field('preview_picture', __('Preview picture'));
-        $show->field('detail_picture', __('Detail picture'));
+        $show->field('preview_picture', __('Preview picture'))->image();
+        $show->field('detail_picture', __('Detail picture'))->image();
         $show->field('preview_text', __('Preview text'));
         $show->field('detail_text', __('Detail text'));
         $show->field('created_at', __('Created at'));

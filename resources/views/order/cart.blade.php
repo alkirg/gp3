@@ -18,6 +18,7 @@
                     <div class="cart-product__item__product-price"><span class="product-price__value">{{$product->price}} рублей</span></div>
                 </div>
             </div>
+            <h2>Заказать</h2>
             <form action="/orders/{{$product->id}}" method="post" class="form">
                 @csrf
                 <input type="hidden" name="product_id" value="{{$product->id}}">

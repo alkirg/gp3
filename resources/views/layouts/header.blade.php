@@ -17,6 +17,6 @@
                 <div class="payment-basket__status__basket"><span class="payment-basket__status__basket-value">0</span><span class="payment-basket__status__basket-value-descr">товаров</span></div>
             </div>
         </div>
-        <div class="authorization-block">@guest<a href="{{route('register')}}" class="authorization-block__link">Регистрация</a><a href="{{route('login')}}" class="authorization-block__link">Войти</a>@endguest @auth<span class="authorization-block__link">Здравствуйте!</span><a href="{{route('logout')}}" class="authorization-block__link">Выйти</a>@endauth</div>
+        <div class="authorization-block">@guest<a href="{{route('register')}}" class="authorization-block__link">Регистрация</a><a href="{{route('login')}}" class="authorization-block__link">Войти</a>@endguest @auth<span class="authorization-block__link">Здравствуйте, {{auth()->user()->name}}!</span><a href="{{route('logout')}}" class="authorization-block__link">Выйти</a>@endauth</div>
     </div>
 </header>

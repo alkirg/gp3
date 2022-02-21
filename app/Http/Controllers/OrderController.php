@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMake;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -32,9 +35,11 @@ class OrderController extends Controller
             $order = new Order();
             $order->user_id = auth()->user()->id;
             $order->email = $request->email;
+            $order->name = $request->name;
             $order->product_id = $request->product_id;
             $order->total = $product->price;
             if ($order->save()) {
+                Mail::to(Setting::settings()->email)->send(new OrderMake($order));
                 return redirect()->route('order', ['order' => $order]);
             }
         }
